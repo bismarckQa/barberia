@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(\"C:\\xampp\\mysql\\bin\\mysql\":*)",
+      "Bash(\"C:\\xampp\\mysql\\bin\\mysql\" -u root barberia_db -e \"SELECT COUNT(*) as total FROM ventas;\")",
+      "Bash(\"C:\\xampp\\mysql\\bin\\mysql\" -u root barberia_db -e \"SELECT DATE(fecha_venta) as fecha, COUNT(*) as ventas, SUM(precio) as total FROM ventas GROUP BY DATE(fecha_venta) ORDER BY fecha DESC LIMIT 10;\")",
+      "Bash(dir /s /b)",
+      "Bash(\"C:\\xampp\\mysql\\bin\\mysql\" -u root barberia_db -e \"DESCRIBE ventas;\")",
+      "Bash(\"C:\\xampp\\mysql\\bin\\mysql\" -u root barberia_db -e \"SELECT id, nombre FROM barberos WHERE estado = ''activo'';\")",
+      "Bash(\"C:\\xampp\\mysql\\bin\\mysql\" -u root barberia_db -e \"SELECT id, nombre, precio FROM servicios LIMIT 10;\")",
+      "Bash(\"C:\\xampp\\mysql\\bin\\mysql\" -u root barberia_db -e \"SELECT id, nombre, apellido FROM clientes LIMIT 10;\")",
+      "Bash(\"C:\\xampp\\mysql\\bin\\mysql\" -u root barberia_db -e \"SELECT id, nombre FROM servicios;\")",
+      "Bash(\"C:\\xampp\\mysql\\bin\\mysql\" -u root barberia_db -e \"SELECT COUNT(*) as total FROM clientes;\")",
+      "Bash(\"C:\\xampp\\mysql\\bin\\mysql\" -u root barberia_db -e \"SELECT MIN(fecha_venta) as primera, MAX(fecha_venta) as ultima FROM ventas;\")",
+      "Bash(\"C:\\xampp\\mysql\\bin\\mysql\" -u root barberia_db -e \"SELECT id, fecha_venta, DATE_FORMAT(fecha_venta, ''%d/%m/%Y %H:%i'') as formato_visual FROM ventas ORDER BY fecha_venta DESC LIMIT 3;\")",
+      "Bash(\"C:\\xampp\\mysql\\bin\\mysql\" -u root barberia_db -e \"SELECT COUNT(*) as total FROM ventas WHERE fecha_venta >= ''2025-08-01'' AND fecha_venta <= ''2025-10-24'';\")",
+      "Bash(git init:*)",
+      "Bash(git config:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

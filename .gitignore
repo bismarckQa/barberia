@@ -1,0 +1,48 @@
+# Sistema de Gestión para Barbería
+# Archivos y carpetas a ignorar en Git
+
+# Configuración local
+config/database.php
+
+# Archivos de prueba
+test_conexion.php
+
+# Logs
+*.log
+
+# Archivos temporales de sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Carpetas de IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos PHP temporales
+*.tmp
+*.bak
+*.swp
+*~
+
+# Backups
+backup/
+*.sql.bak
+*.sql.gz
+
+# Cache
+cache/
+tmp/
+
+# Uploads (si se implementa subida de archivos)
+uploads/
+
+# Node modules (si se usa npm en el futuro)
+node_modules/
+package-lock.json
+
+# Composer (si se usa en el futuro)
+vendor/
+composer.lock

@@ -1,0 +1,318 @@
+/* Estilos personalizados para el sistema de barbería */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --dark-color: #212529;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Wrapper principal - FLEX */
+#wrapper {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Sidebar - FLEX */
+#sidebar-wrapper {
+    width: 250px;
+    min-width: 250px;
+    min-height: 100vh;
+    background-color: #212529;
+    flex-shrink: 0;
+    position: relative;
+}
+
+/* Main Content - FLEX */
+#page-content-wrapper {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+}
+
+.content-wrapper {
+    padding: 20px;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Sidebar items */
+#sidebar-wrapper .list-group-item {
+    padding: 15px 20px;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    border: none;
+    border-bottom: 1px solid #343a40;
+}
+
+#sidebar-wrapper .list-group-item:hover {
+    background-color: #495057 !important;
+    padding-left: 25px;
+}
+
+#sidebar-wrapper .list-group-item.active {
+    background-color: var(--primary-color) !important;
+    border-left: 4px solid #fff;
+}
+
+#sidebar-wrapper .list-group-item i {
+    margin-right: 10px;
+    width: 20px;
+}
+
+/* Cards personalizadas */
+.stat-card {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card .card-body {
+    padding: 20px;
+}
+
+.stat-card h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Botones */
+.btn {
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-action {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+}
+
+/* Tablas */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.table thead th {
+    background-color: var(--dark-color);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    border: none;
+    white-space: nowrap;
+}
+
+.table tbody tr {
+    transition: background-color 0.2s;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f3f5;
+}
+
+/* Badges */
+.badge {
+    padding: 6px 12px;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+/* Forms */
+.form-control, .form-select {
+    border-radius: 6px;
+    border: 1px solid #dee2e6;
+    padding: 10px 15px;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+.form-label {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 8px;
+}
+
+/* Cards */
+.card {
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.card-header {
+    border-radius: 8px 8px 0 0 !important;
+    font-weight: 600;
+}
+
+/* Grid de servicios */
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* Euro symbol */
+.euro::before {
+    content: '€';
+    margin-right: 3px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .stat-card h3 {
+        font-size: 1.75rem;
+    }
+
+    .content-wrapper {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    #sidebar-wrapper {
+        width: 200px;
+        min-width: 200px;
+    }
+
+    .stat-card h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #wrapper {
+        flex-direction: column;
+    }
+
+    #sidebar-wrapper {
+        width: 100%;
+        min-width: 100%;
+        min-height: auto;
+    }
+
+    #page-content-wrapper {
+        width: 100%;
+    }
+
+    .content-wrapper {
+        padding: 10px;
+    }
+
+    .stat-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .stat-card .card-body {
+        padding: 15px;
+    }
+
+    .table {
+        font-size: 0.875rem;
+    }
+
+    .btn {
+        padding: 6px 12px;
+        font-size: 0.875rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Asegurar que ningún elemento cause scroll horizontal */
+.container-fluid,
+.row,
+.col,
+[class*="col-"] {
+    max-width: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* DataTables responsive */
+.dataTables_wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Modal responsive */
+.modal-dialog {
+    max-width: 90%;
+    margin: 1.75rem auto;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 500px;
+    }
+}
