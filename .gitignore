@@ -1,11 +1,8 @@
 # Sistema de Gestión para Barbería
 # Archivos y carpetas a ignorar en Git
 
-# Configuración local
-config/database.php
-
-# Archivos de prueba
-test_conexion.php
+# Archivos de prueba (eliminados del repositorio)
+# test_conexion.php
 
 # Logs
 *.log
